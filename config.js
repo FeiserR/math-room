@@ -1,0 +1,1 @@
+export const staticHosting = true;
