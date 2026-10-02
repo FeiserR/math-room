@@ -1,3 +1,6 @@
+import { topics } from './content.js';
+import { additionalTopics, additionalDecks } from './new-worksheet-content.js';
+export const flashcardTopics = [...topics, ...additionalTopics];
 import { flashcardSources } from './flashcard-sources.js';
 
 // Each row is [given information, one question, one answer, one short reason].
@@ -113,6 +116,7 @@ export const flashcardDecks = [
     ['Keep 5x + 3y unchanged.\nIncrease x by 3.', 'How much must y change?', 'Decrease y by 5', 'The changes contribute +15 and −15.'],
     ['One solution: (5, −7)\nA repeatable change: (+3, −5)', 'Write the full integer solution family.', '(x, y) = (5 + 3t, −7 − 5t), t ∈ ℤ', 'Apply any integer number of these changes.']
   ]}
+, ...additionalDecks
 ];
 
 export const flashcards = flashcardDecks.flatMap(deck => deck.steps.map(([given, prompt, answer, why], index) => ({
